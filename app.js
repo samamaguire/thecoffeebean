@@ -18,35 +18,6 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
-app.post('/add', function (req, res) {
-    var form = new formidable.IncomingForm();
-    
-    
-    form.parse(req, function (err, fields, files) {
-        res.writeHead(200, {'content-type': 'text/plain'});
-        res.write('received upload:\n\n');
-        res.end(util.inspect({fields: fields, files: files}));
-    });
-
-    form.on('end', function(fields, files) {
-        var temp_path = this.openedFiles[0].path;
-        
-        var file_name = this.openedFiles[0].name;
-        
-        var new_location = 'public/images/'; 
-        console.log(new_location + file_name);
-        
-        fs.copy(temp_path, new_location + file_name, function(err) {
-            if (err) {
-                console.log(err);
-            }
-            else {
-                console.log('success');
-            }
-        });
-    }); 
-});
-
 
 
 // uncomment after placing your favicon in /public
@@ -64,7 +35,7 @@ app.use('/users', users);
 
 //db
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/as2');
+mongoose.connect('mongodb://samamaguire:7glrFart@ds041851.mongolab.com:41851/coffee');
 
 
 
