@@ -1,0 +1,21 @@
+extends layout
+
+block content
+	div(class='container')
+		div(class='callapse navbar-collapse')
+			a(href='/coffees', title='List Coffee') List Stores
+		h2 #{coffee.title}
+		div(class='container-fluid' class='display')
+			div(class='map')
+				!{coffee.location}
+			h3 #{coffee.description}
+			h3 #{coffee.established}
+			
+			h3 #{coffee.coffeetypes}
+			img(src='/images/#{upload.fileName}', width='300')
+			p #{upload.title}
+			Upload Date #{upload.uploadDate}
+			div
+				a(href='/coffees/edit/#{coffee._id}' title='edit') Edit
+			div
+				a(href='/coffees/delete/#{coffee._id}' title='Delete' onclick='return confirm(\'Are you sure you want to delete this Store?\');') Delete

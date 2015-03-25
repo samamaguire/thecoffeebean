@@ -1,0 +1,14 @@
+extends layout
+
+block content
+	div(class='container-fluid')
+		div(class='collapse navbar-collapse')
+			a(href='/coffees/add', title='Add') Add A Store
+		h1  Barrie's Coffee
+		ul(class='container-fluid')
+			each coffee, i in coffees
+				li(class='col-md-4')
+					a(href='coffees/display/#{coffee._id}' title='display')
+						h2 #{coffee.title}
+						h5 #{coffee.established}
+

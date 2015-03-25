@@ -1,0 +1,26 @@
+extends layout
+
+block content
+	div(class='container')
+		div(class='callapse navbar-collapse')
+			a(href='/coffees', title='List Coffee') List Stores
+		h2 Edit #{coffee.title}
+		form(method='post' class='col-md-6')
+			div(class='')
+				div(class='row control-group')
+					label Title
+					input(name='title', required, placeholder='title', value='#{coffee.title}')
+				div(class='row control-group')
+					label Description
+					textarea(name='description', required, placeholder='description') #{coffee.description}
+				div(class='row control-group')
+					label Location
+					input(name='location', required, placeholder='Location' value='#{coffee.location}') 
+				div(class='row control-group')
+					label Established
+					input(name='established', required, placeholder='established', value='#{coffee.established}')
+				div(class='row control-group')
+					label Coffee Types
+					input(name='coffeetypes', required, placeholder='coffeetypes', value='#{coffee.coffeetypes}')
+				input(type='hidden', name='id' value='#{coffee._id}')
+				input(type='submit', value='Update Coffee')

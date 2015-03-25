@@ -1,0 +1,24 @@
+extends layout
+
+block content
+	div(class='container')
+		div(class='callapse navbar-collapse')
+			a(href='/coffees', title='List Stores') List Stores
+		h2 Add a new Store
+		form(method='post', action='/coffees/add' class='container-fluid')
+			div(class='col-md-6 col-md-offset-3' class='add')
+				div(class='container-fluid')
+					input(name='title', required, placeholder='Title')
+				div
+					label(for='upload') Upload Image
+					input(type='file' name='upload')
+				div(class='')
+					textarea(name='description', required, placeholder='Description')
+				div(class='')
+					input(name='location', required, placeholder='Location')
+				div(class='')
+					input(name='established', required, placeholder='Established')
+				div(class='')
+					input(name='coffeetypes', required, placeholder='Description')
+				
+				input(type='submit', value='Add Store' class='button')

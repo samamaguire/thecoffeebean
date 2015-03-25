@@ -1,5 +1,5 @@
 {
-  "name": "thecoffeebean",
+  "name": "lesson6",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -12,6 +12,8 @@
     "express": "~4.11.1",
     "jade": "~1.9.1",
     "morgan": "~1.5.1",
-    "serve-favicon": "~2.2.0"
+    "serve-favicon": "~2.2.0",
+    "mongodb": "*",
+    "mongoose": "*"
   }
 }

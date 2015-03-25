@@ -1,8 +1,81 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+@font-face {
+	font-family: denk;
+	src: url(../fonts/denk.ttf);
 }
 
-a {
-  color: #00B7FF;
+body {
+	background-image: url(../images/beans.jpg);
+	color: #fff;
+}
+
+
+
+.container-fluid {
+	padding: 0px;
+}
+
+h1 {
+	font-family: denk;
+	font-size: 80px;
+	padding: 200px 0px;
+	text-align: center;
+	margin: 0px;
+	color: #fff;	
+}
+
+h2 {
+	font-family: denk;
+}
+
+
+ul {
+	list-style-type: none;
+	padding: 0;
+}
+
+li {
+	text-align: center;
+	outline: 1px solid black;
+	background-color: lightgrey;
+	height: 200px;
+}
+
+
+
+.display {
+	background: brown;
+}
+
+/*MAP WIDTH*/
+iframe {
+	width: 100%;
+}
+
+.map[rel="&lt;"], .map[rel="&#60;"] {
+	display: none;
+}
+
+/*FORM PAGE*/ 
+
+form {
+}
+
+.add {
+	text-align: center;
+	background-color: brown;
+	padding: 0px;
+}
+
+.button {
+	width: 100%;
+	padding: 10px 0px;
+}
+
+input, textarea {
+	color: black;
+}
+
+input {
+	width: 100%;
+	padding: 10px;
 }
