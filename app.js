@@ -8,7 +8,6 @@ var bodyParser = require('body-parser');
 //add dependencies for file upload
 var formidable = require('formidable');
 var util = require('util');
-var fs = require('fs-extra');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
