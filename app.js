@@ -21,12 +21,10 @@ app.set('view engine', 'jade');
 
 app.post('/coffees/add', function (req, res) {
     var form = new formidable.IncomingForm();
-    
+    var title;
     
     form.parse(req, function (err, fields, files) {
-        res.writeHead(200, {'content-type': 'text/plain'});
-        res.write('received upload:\n\n');
-        res.end(util.inspect({fields: fields, files: files}));
+        res.render('added', { coffee: Coffee.title});
     });
 
     form.on('end', function(fields, files) {
@@ -42,9 +40,23 @@ app.post('/coffees/add', function (req, res) {
                 console.log(err);
             }
             else {
-                console.log('success');
+                Coffee.create({
+                    title: title,
+                    description: req.body.description,
+                    established: req.body.established,
+                    location: req.body.location,
+                    coffeetypes: req.body.coffeetypes,
+                    fileName: file_name
+                }, function (err, coffee) {
+                    if (err) {
+                        console.log(err);
+                        res.render('error', { error: err });
+                    }
+                    else {
+                        console.log('Upload saved');
+                    }
+                }); //end create    
             }
-        });
     }); 
 });
 
