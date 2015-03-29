@@ -21,7 +21,6 @@ app.set('view engine', 'jade');
 
 app.post('/coffees/add', function (req, res) {
     var form = new formidable.IncomingForm();
-    var title;
     
     form.parse(req, function (err, fields, files) {
         res.render('added', { coffee: Coffee.title});
