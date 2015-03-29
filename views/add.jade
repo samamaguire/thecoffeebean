@@ -5,13 +5,13 @@ block content
 		div(class='callapse navbar-collapse')
 			a(href='/coffees', title='List Stores') List Stores
 		h2 Add a new Store
-		form(method='post', action='/coffees/add' class='container-fluid')
+		form(method='post', enctype='multipart/form-data' class='container-fluid')
 			div(class='col-md-6 col-md-offset-3' class='add')
 				div(class='container-fluid')
 					input(name='title', required, placeholder='Title')
 				div
-					label(for='upload') Upload Image
-					input(type='file' name='upload')
+					label(for='coffee') Upload Image
+					input(type='file' accept="image/*" name='coffee')
 				div(class='')
 					textarea(name='description', required, placeholder='Description')
 				div(class='')

@@ -12,9 +12,7 @@ block content
 			h3 #{coffee.established}
 			
 			h3 #{coffee.coffeetypes}
-			img(src='/images/#{upload.fileName}', width='300')
-			p #{upload.title}
-			Upload Date #{upload.uploadDate}
+			img(src='/images/#{coffee.fileName}', width='300')
 			div
 				a(href='/coffees/edit/#{coffee._id}' title='edit') Edit
 			div
