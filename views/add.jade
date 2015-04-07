@@ -2,8 +2,15 @@ extends layout
 
 block content
 	div(class='container')
-		div(class='callapse navbar-collapse')
-			a(href='/coffees', title='List Stores') List Stores
+		nav( class="navbar navbar-default navbar-fixed-top")
+			div(class='container')
+				ul(class='nav navbar-nav')
+					li
+						a(href='/coffees', title='Home') Home
+					li
+						a(href='/coffees/add', title='Add') Add A Store
+					li
+						a(href='/coffees/displayall', title='Display All') Display All
 		h2 Add a new Store
 		form(method='post', enctype='multipart/form-data' class='container-fluid')
 			div(class='col-md-6 col-md-offset-3' class='add')

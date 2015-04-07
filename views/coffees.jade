@@ -2,13 +2,20 @@ extends layout
 
 block content
 	div(class='container-fluid')
-		div(class='collapse navbar-collapse')
-			a(href='/coffees/add', title='Add') Add A Store
+		nav( class="navbar navbar-default navbar-fixed-top")
+			div(class='container')
+				ul(class='nav navbar-nav')
+					li
+						a(href='/coffees', title='Home') Home
+					li
+						a(href='/coffees/add', title='Add') Add A Store
+					li
+						a(href='/coffees/displayall', title='Display All') Display All
 		h1  Barrie's Coffee
 		ul(class='container-fluid')
 			each coffee, i in coffees
-				li(class='col-md-4')
+				li(class='col-md-4' class='stores')
 					a(href='coffees/display/#{coffee._id}' title='display')
 						h2 #{coffee.title}
 						h5 #{coffee.established}
-						img(title='#{coffee.title}', src='/images/#{coffee.fileName}', width='300')
+					img(title='#{coffee.title}', src='/images/#{coffee.fileName}', width='300', class='displayImage')
