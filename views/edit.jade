@@ -19,8 +19,123 @@ block content
 				div(class='row control-group')
 					label Established
 					input(name='established', required, placeholder='established', value='#{coffee.established}')
-				div(class='row control-group')
-					label Coffee Types
-					input(name='coffeetypes', required, placeholder='coffeetypes', value='#{coffee.coffeetypes}')
+				div
+					h2 Add their Most Popular Flavours!
+					input(name='coffeetypes', required, value='#{coffee.coffeetypes}')
+					input(name='coffeetype2', required, value='#{coffee.coffeetype2}')
+					input(name='coffeetype3', required, value='#{coffee.coffeetype3}')
+				div
+					div
+						h2 Hours
+						table
+							tr
+								td Monday - Friday
+								td 
+									select(name='weekAm')
+										option(value='#{weekAm}') #{weekAm}
+										option(value='Closed') Closed
+										option(value='12am') 12am
+										option(value='1am') 1am
+										option(value='2am') 2am
+										option(value='3am') 3am
+										option(value='4am') 4am
+										option(value='6am') 6am
+										option(value='5am') 5am
+										option(value='7am') 7am
+										option(value='8am') 8am
+										option(value='9am') 9am
+										option(value='10am') 10am
+										option(value='11am') 11am
+								td -
+								td 
+									select(name='weekPm')
+										option(value='#{weekPm}') #{weekPm}
+										option(value='Closed') Closed
+										option(value='12pm') 12pm
+										option(value='1pm') 1pm
+										option(value='2pm') 2pm
+										option(value='3pm') 3pm
+										option(value='4pm') 4pm
+										option(value='5pm') 5pm
+										option(value='6pm') 6pm
+										option(value='7pm') 7pm
+										option(value='8pm') 8pm
+										option(value='9pm') 9pm
+										option(value='10pm') 10pm
+										option(value='11pm') 11pm
+							tr
+								td Saturday
+								td
+									select(name='satAm')
+										option(value='#{satAm}') #{satAm}
+										option(value='Closed') Closed
+										option(value='12am') 12am
+										option(value='1am') 1am
+										option(value='2am') 2am
+										option(value='3am') 3am
+										option(value='4am') 4am
+										option(value='6am') 6am
+										option(value='5am') 5am
+										option(value='7am') 7am
+										option(value='8am') 8am
+										option(value='9am') 9am
+										option(value='10am') 10am
+										option(value='11am') 11am
+								td -
+								td
+									select(name='satPm')
+										option(value='#{satPm}') #{satPm}
+										option(value='Closed') Closed
+										option(value='12pm') 12pm
+										option(value='1pm') 1pm
+										option(value='2pm') 2pm
+										option(value='3pm') 3pm
+										option(value='4pm') 4pm
+										option(value='5pm') 5pm
+										option(value='6pm') 6pm
+										option(value='7pm') 7pm
+										option(value='8pm') 8pm
+										option(value='9pm') 9pm
+										option(value='10pm') 10pm
+										option(value='11pm') 11pm
+							tr
+								td Sunday
+								td
+									select(name='sunAm')
+										option(value='#{sunAm}') #{sunAm}
+										option(value='Closed') Closed
+										option(value='12am') 12am
+										option(value='1am') 1am
+										option(value='2am') 2am
+										option(value='3am') 3am
+										option(value='4am') 4am
+										option(value='6am') 6am
+										option(value='5am') 5am
+										option(value='7am') 7am
+										option(value='8am') 8am
+										option(value='9am') 9am
+										option(value='10am') 10am
+										option(value='11am') 11am
+								td -
+								td
+									select(name='sunPm')
+										option(value='#{sunPm}') #{sunPm}
+										option(value='Closed') Closed
+										option(value='12pm') 12pm
+										option(value='1pm') 1pm
+										option(value='2pm') 2pm
+										option(value='3pm') 3pm
+										option(value='4pm') 4pm
+										option(value='5pm') 5pm
+										option(value='6pm') 6pm
+										option(value='7pm') 7pm
+										option(value='8pm') 8pm
+										option(value='9pm') 9pm
+										option(value='10pm') 10pm
+										option(value='11pm') 11pm
+				div
+					h2 Contact Us
+					input(name='email', type='email', required, value='#{coffee.email}')
+					input(name='phone', type='tel', required, value='#{coffee.phone}')
 				input(type='hidden', name='id' value='#{coffee._id}')
 				input(type='submit', value='Update Coffee')

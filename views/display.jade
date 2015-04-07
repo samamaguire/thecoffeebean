@@ -8,11 +8,33 @@ block content
 		div(class='container-fluid' class='display')
 			div(class='map')
 				!{coffee.location}
-			h3 #{coffee.description}
-			h3 #{coffee.established}
-			
-			h3 #{coffee.coffeetypes}
 			img(src='/images/#{coffee.fileName}', width='300')
+			h3 #{coffee.description}
+			div
+				h2 Est. #{coffee.established}
+			div
+				h2 Hours
+				table
+					tr
+						td Monday - Friday
+						td #{coffee.weekAm}
+						td #{coffee.weekPm}
+					tr
+						td Saturday
+						td #{coffee.satAm}
+						td #{coffee.satPm}
+					tr
+						td Sunday
+						td #{coffee.sunAm}
+						td #{coffee.sunPm}
+			div
+				p 1. #{coffee.coffeetypes}
+				p 2. #{coffee.coffeetype2}
+				p 3. #{coffee.coffeetype3}
+			div
+				h2 Contact Us
+				p #{coffee.email}
+				p #{coffee.phone}
 			div
 				a(href='/coffees/edit/#{coffee._id}' title='edit') Edit
 			div

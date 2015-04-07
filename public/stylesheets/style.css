@@ -20,7 +20,7 @@ h1 {
 	padding: 200px 0px;
 	text-align: center;
 	margin: 0px;
-	color: #fff;	
+	color: #fff;
 }
 
 h2 {
@@ -55,7 +55,7 @@ iframe {
 	display: none;
 }
 
-/*FORM PAGE*/ 
+/*FORM PAGE*/
 
 form {
 }
@@ -78,4 +78,8 @@ input, textarea {
 input {
 	width: 100%;
 	padding: 10px;
+}
+
+option {
+	color: black;
 }

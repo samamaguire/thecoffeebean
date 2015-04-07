@@ -7,7 +7,17 @@ var CoffeeSchema = new mongoose.Schema({
 	description: String,
 	location: String,
 	coffeetypes: String,
+	coffeetype2: String,
+	coffeetype3: String,
 	established: Number,
+	weekAm: String,
+	weekPm: String,
+	satAm: String,
+	satPm: String,
+	sunAm: String,
+	sunPm: String,
+	email: String,
+	phone: Number,
 	fileName: String,
     uploadDate: { type: Date, default: Date.now }
 });
