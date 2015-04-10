@@ -44,36 +44,7 @@ mongoose.connect('mongodb://samamaguire:7glrFart@ds041851.mongolab.com:41851/cof
 var coffees = require('./routes/coffees');
 app.use('/', coffees);
 
-//post request for file upload on home page
-// app.post('/', function (req, res, next){
-//     //use the formidable package to process the file upload
-//     var form = new formidable.IncomingForm;
-//     form.parse(req, function (err, fields, files) {
-//         res.writeHead(200);
-//         res.write('file uploaded\n');
-//         res.end(util.inspect({ fields: fields, files: files}));
-//     });
 
-//     // copy the file from the temp location to public/images
-//     form.on('end', function (fields, files) {
-//         var temp_path = this.openedFiles['upload'].path;
-
-//         var file_name = this.openedFiles['upload'].name;
-
-//         var new_path = 'public/images/';
-
-//         //copy images to folder
-//         fs.copy(temp_path, new_path + file_name, function(err) {
-//             if (err) {
-//                 res.render('error' { error: err} );
-//                 res.end('Image Upload error')
-//             }
-//             else {
-//                 res.end('Image Uploaded Seccessfully');
-//             }
-//         }
-//     });
-// });
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

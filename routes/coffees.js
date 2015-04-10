@@ -6,14 +6,14 @@ var router = express.Router();
 var mongoose = require('mongoose');
 var Coffee = require('../models/coffee');
 
+// Use formidable for images
 var formidable = require('formidable');
 var util = require('util');
 var fs = require('fs-extra');
 
-// interperept GET /products - show product listing
+// show all the shops
 
 router.get('/coffees', function (req, res, next) {
-	// retreive all products using the product model; returns either an error or list of products
 	Coffee.find(function (err, coffees){
 		// if we have an error
 		if (err) {
@@ -26,6 +26,7 @@ router.get('/coffees', function (req, res, next) {
 	});
 });
 
+// On click of the product show display page
 router.get('/coffees/display/:id', function (req, res, next){
 	var id = req.params.id;
 
@@ -39,6 +40,7 @@ router.get('/coffees/display/:id', function (req, res, next){
 	});
 });
 
+// grab the edit page
 router.get('/coffees/edit/:id', function (req, res, next){
 	var id = req.params.id;
 
@@ -51,14 +53,11 @@ router.get('/coffees/edit/:id', function (req, res, next){
 		}
 	});
 });
-
-
-
-// POST /products/:id - update selected product
+// update the store
 router.post('/coffees/edit/:id', function (req, res, next) {
 	var id = req.body.id;
 
-	// use the product model fill ht eproperties and save the chages
+	// fill all inputs
 	var coffee = {
 		_id: id,
 		title: req.body.title,
@@ -92,7 +91,6 @@ router.post('/coffees/edit/:id', function (req, res, next) {
 	});
 });
 
-// GET /products/add - show product input form
 router.get('/coffees/add', function(req, res, next){
 	res.render('add');
 });
@@ -220,9 +218,7 @@ router.post('/coffees/add', function (req, res, next) {
 
 
 
-//API GET products request handler
 router.get('/coffees/displayall', function (req, res, next) {
-	// retreive all products using the product model; returns either an error or list of products
 	Coffee.find(function (err, coffees){
 		// if we have an error
 		if (err) {
@@ -235,19 +231,16 @@ router.get('/coffees/displayall', function (req, res, next) {
 	});
 });
 
-// get product delete request
-//colon indicates variable in url
+// Delete product with selected id
 router.get('/coffees/delete/:id', function (req, res, next) {
 	//store the id from the url into a variable
 	var id = req.params.id;
 
-	//use product model
 	Coffee.remove({_id:id }, function (err, coffee) {
 		if (err) {
 			res.send('Coffee' + id + ' not found');
 		}
 		else {
-			//indicates redierection one page to another
 			res.statusCode = 302;
 			res.setHeader('Location', 'http://' + req.headers['host'] + '/coffees');
 			res.end();
@@ -255,6 +248,35 @@ router.get('/coffees/delete/:id', function (req, res, next) {
 	});
 
 });
+
+// DISPLAY ALL API
+router.get('/api/coffees', function (req, res, next) {
+	Coffee.find(function (err, coffees){
+		// if we have an error
+		if (err) {
+			res.render('error', { error: err });
+		}
+		else {
+			res.render('coffee');
+		}
+
+	});
+});
+
+//DISPLAY SELECTED ID
+router.get('/api/coffees/:id', function (req, res, next){
+	var id = req.params.id;
+
+	Coffee.findById(id, function (err, coffee){
+		if (err) {
+			res.send('Coffee ' + id + ' not found' );
+		}
+		else {
+			res.render('coffee', {coffee: coffee});
+		}
+	});
+});
+
 
 
 
