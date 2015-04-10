@@ -59,7 +59,7 @@ router.post('/coffees/edit/:id', function (req, res, next) {
 	var id = req.body.id;
 
 	// use the product model fill ht eproperties and save the chages
-	var Coffee = {
+	var coffee = {
 		_id: id,
 		title: req.body.title,
 		description: req.body.description,
@@ -221,14 +221,17 @@ router.post('/coffees/add', function (req, res, next) {
 
 
 //API GET products request handler
-router.get('/api/coffee', function (req, res, next){
-	Product.find(function(err, coffees) {
+router.get('/coffees/displayall', function (req, res, next) {
+	// retreive all products using the product model; returns either an error or list of products
+	Coffee.find(function (err, coffees){
+		// if we have an error
 		if (err) {
-			res.send(err);
+			res.render('error', { error: err });
 		}
 		else {
-			res.send(coffees);
+			res.render('displayall', { coffees: coffees });
 		}
+
 	});
 });
 

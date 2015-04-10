@@ -17,8 +17,8 @@ block content
 			div(class='map')
 				!{coffee.location}
 			div(class='col-md-6')
-				img(src='/images/#{coffee.fileName}', width='300')
-			div(class='col-md-6')
+				img(src='/images/#{coffee.fileName}', class='storeimage')
+			div(class='col-md-6' class='content')
 				h3 #{coffee.description}
 				div
 					h2 Est. #{coffee.established}
@@ -46,7 +46,7 @@ block content
 					h2 Contact Us
 					p #{coffee.email}
 					p #{coffee.phone}
-				div
-					a(href='/coffees/edit/#{coffee._id}' title='edit') Edit
-				div
-					a(href='/coffees/delete/#{coffee._id}' title='Delete' onclick='return confirm(\'Are you sure you want to delete this Store?\');') Delete
+				div(class='col-md-6')
+					a(href='/coffees/edit/#{coffee._id}' title='edit' class="btn btn-default") Edit
+				div(class='col-md-6')
+					a(href='/coffees/delete/#{coffee._id}' class="btn btn-default" title='Delete' onclick='return confirm(\'Are you sure you want to delete this Store?\');') Delete

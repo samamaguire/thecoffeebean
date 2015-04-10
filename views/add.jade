@@ -14,14 +14,16 @@ block content
 		h2 Add a new Store
 		form(method='post', enctype='multipart/form-data' class='container-fluid')
 			div(class='col-md-6 col-md-offset-3' class='add')
+				h2 Welcome!
 				div(class='container-fluid')
-					input(name='title', required, placeholder='Title')
-				div
-					label(for='coffee') Upload Image
+					input(name='title', required, placeholder='Store Title')
+				div(class='imageupload')
+					label(for='coffee') Upload Shop Image
 					input(type='file' accept="image/*" name='coffee')
 				div(class='')
 					textarea(name='description', required, placeholder='Description')
 				div(class='')
+					p Please paste an embed code from Google Maps into "location."
 					input(name='location', required, placeholder='Location')
 				div(class='')
 					input(name='established', required, placeholder='Established')

@@ -1,0 +1,34 @@
+extends layout
+
+block content
+    div(class='container-fluid')
+        nav( class="navbar navbar-default navbar-fixed-top")
+            div(class='container')
+                ul(class='nav navbar-nav')
+                    li
+                        a(href='/coffees', title='Home') Home
+                    li
+                        a(href='/coffees/add', title='Add') Add A Store
+                    li
+                        a(href='/coffees/displayall', title='Display All') Display All
+            div
+                table
+                    thead
+                        tr
+                            td Store
+                            td Year Established
+                            td Coffee Type 1
+                            td Coffee Type 2
+                            td Coffee Type 3
+                            td Email
+                            td Phone
+                    each coffee, i in coffees
+                        tbody
+                            tr
+                                td #{coffee.title}
+                                td #{coffee.established}
+                                td #{coffee.coffeetypes}
+                                td #{coffee.coffeetype2}
+                                td #{coffee.coffeetype3}
+                                td #{coffee.email}
+                                td #{coffee.phone}

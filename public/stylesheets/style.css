@@ -9,7 +9,9 @@ body {
 	padding-top: 70px;
 }
 
-
+nav {
+	background-color: #755A42;
+}
 
 .container-fluid {
 	padding: 0px;
@@ -18,7 +20,7 @@ body {
 h1 {
 	font-family: denk;
 	font-size: 80px;
-	padding: 200px 0px;
+	padding: 150px 0px;
 	text-align: center;
 	margin: 0px;
 	color: #fff;
@@ -27,6 +29,7 @@ h1 {
 h2 {
 	font-family: denk;
 	font-size: 40px;
+	text-shadow: 2px 2px #4D351D;
 }
 
 
@@ -45,7 +48,16 @@ ul {
 
 
 .display {
-	background: brown;
+	background: #AC8B6F;
+	box-shadow: 0px 0px 15px black;
+}
+
+.storeimage {
+	width: 100%;
+}
+
+.content {
+	padding-bottom: 25px;
 }
 
 /*MAP WIDTH*/
@@ -63,8 +75,9 @@ form {
 
 .add {
 	text-align: center;
-	background-color: brown;
-	padding: 0px;
+	background-color: #AC8B6F;
+	padding: 20px;
+	border-radius: 3px;
 }
 
 .button {
@@ -73,12 +86,21 @@ form {
 }
 
 input, textarea {
+	width: 75%;
 	color: black;
+	background-color: #8B6E46;
+	border: 1px solid #4D351D;
+	border-radius: 3px;
+	color: white;
+	margin-top: 10px;
+	margin-bottom: 10px;
+
 }
 
 input {
-	width: 100%;
-	padding: 10px;
+	padding-left: 8px;
+	padding-top: 10px;
+	padding-bottom: 10px;
 }
 
 option {
@@ -100,7 +122,7 @@ option {
 }
 
 a {
-	color: black;
+	color: white;
 }
 
 a:visited {
@@ -112,5 +134,40 @@ a:visited {
 }
 
 .title > h2 {
-	
+
+}
+
+.imageupload {
+	margin: 0 auto;
+}
+
+.imageupload > input {
+	width: 100%;
+}
+
+table {
+	width: 100%;
+}
+
+.navbar-default {
+	background-color: #4D351D;
+}
+
+.splash {
+	text-align: center;
+}
+
+.splash > h1 {
+	padding-top: 20px;
+}
+
+.spashimage {
+	margin: 0 auto;
+	padding-bottom: 50px;
+}
+
+.center {
+	text-align: center;
+	margin-left: 17%;
+	background-color: #4D351D;
 }

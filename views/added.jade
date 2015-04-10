@@ -1,5 +1,15 @@
 extends layout
 
 block content
+	div(class='container-fluid')
+		nav( class="navbar navbar-default navbar-fixed-top")
+			div(class='container')
+				ul(class='nav navbar-nav')
+					li
+						a(href='/coffees', title='Home') Home
+					li
+						a(href='/coffees/add', title='Add') Add A Store
+					li
+						a(href='/coffees/displayall', title='Display All') Display All
 	a(href='/coffees', title='List Coffees') List Coffees
 	h2 #{coffee} Added Successfully
