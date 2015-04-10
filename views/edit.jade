@@ -1,9 +1,18 @@
 extends layout
 
 block content
-	div(class='container')
-		div(class='callapse navbar-collapse')
-			a(href='/coffees', title='List Coffee') List Stores
+	div(class='container-fluid')
+		nav( class="navbar navbar-default navbar-fixed-top")
+			div(class='container')
+				ul(class='nav navbar-nav')
+					li
+						a(href='/coffees', title='Home') Home
+					li
+						a(href='/coffees/add', title='Add') Add A Store
+					li
+						a(href='/coffees/displayall', title='Display All') Display All
+					li
+						a(href='https://github.com/samamaguire/thecoffeebean.git' title='github') Github
 		h2 Edit #{coffee.title}
 		form(method='post' class='col-md-6')
 			div(class='')
